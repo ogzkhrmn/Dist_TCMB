@@ -31,6 +31,8 @@ public final class HibernateConfiguration {
                 settings.put(Environment.POOL_SIZE, "10");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 settings.put(Environment.DEFAULT_SCHEMA, "public");
+                settings.put(Environment.SHOW_SQL, ApplicationProperties.getProperty("db.show.sql"));
+                settings.put(Environment.FORMAT_SQL, ApplicationProperties.getProperty("db.show.sql"));
                 configuration.setProperties(settings);
                 for (Class clazz : PackageScanner.getClasses(ApplicationProperties.getProperty("entity.package"))) {
                     configuration.addAnnotatedClass(clazz);
