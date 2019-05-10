@@ -106,7 +106,7 @@
     </dependencies>
 
     <build>
-        <finalName>security-service</finalName>
+        <finalName>tcmb-service</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
