@@ -3,9 +3,10 @@ package com.bank.tcmb.service;
 import com.bank.tcmb.core.annotation.Bean;
 import com.bank.tcmb.dao.TCMBDao;
 import com.bank.tcmb.entities.TCMBEntity;
+import com.bank.tcmb.model.ResponseModel;
 import com.bank.tcmb.model.TCMBErrorRequest;
-import com.bank.tcmb.model.TCMBResponse;
 import com.bank.tcmb.model.TCMBRequest;
+import com.bank.tcmb.model.TCMBResponse;
 import com.google.gson.Gson;
 
 import javax.ws.rs.Consumes;
@@ -48,8 +49,11 @@ public class TCMBService implements Serializable {
     @POST
     @Path("/control")
     @Produces(MediaType.APPLICATION_JSON)
-    public boolean isAlive() {
-        return true;
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ResponseModel isAlive() {
+        ResponseModel responseModel = new ResponseModel();
+        responseModel.setSuccess(true);
+        return responseModel;
     }
 
 
